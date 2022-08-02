@@ -68,8 +68,10 @@ Ahora la primera partición que crearemos será de nuestra carpeta raíz, es dec
 
 Para cambiar el tipo de partición se hace con `t` y recibe el código de tipo de almacenamiento, colocando posteriormente `L` se puede ver un listado de los disponibles. Una vez finalizado, se debe de designar la partición de arranque, se puede colocando `p` y después el número de la partición, es este caso 1.
 
-Para salir del instalador pulsamos la tecla `w`, seguido a ello configuramos el swap con el comando `mkswap /dev/sda6`, donde `/dev/sda6` se cambia por el numero de la partición swap que tengas.
-
+Para salir del instalador pulsamos la tecla `w`, seguido a ello configuramos el swap con el comando `mkswap /dev/sda6`, donde `/dev/sda6` se cambia por el numero de la partición swap que tengas. Ahora para activar el swap lo hacemos con el comando:
+```bash
+swapon
+```
 Ahora tenemos que formatear las otras particiones (root y home) para que tengan el formato ext4, donde el `*` se reemplaza por el numero de partición de tu home y root. 
 ```bash
 mkfs.ext4 /dev/sda*

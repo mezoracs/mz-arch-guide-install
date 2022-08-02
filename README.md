@@ -74,7 +74,8 @@ swapon
 ```
 Ahora tenemos que formatear las otras particiones (root y home) para que tengan el formato ext4, donde el `*` se reemplaza por el numero de partición de tu home y root. 
 ```bash
-mkfs.ext4 /dev/sda*
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda5
 ```
 
 Ahora todas las particiones están listas, solo falta montarlas, en este primer caso la partición raíz no podremos montarla, dado que está siendo utilizada por el instalador de Arch, es por ello que procederemos a montarla provisionalmente en `/mnt`, sumado a ello en el caso de la partición home al no existir una carpeta tendremos que crearla utilizando el comando `mkdir /mnt/home`.
